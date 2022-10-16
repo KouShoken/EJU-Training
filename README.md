@@ -1,0 +1,2 @@
+# EJU-Training
+EJU トレーニング
