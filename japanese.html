@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <!-- 必须的 meta 标签 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap 的 CSS 文件 -->
+    <script src="\static\js\jquery-3.6.1.min.js"></script>
+    <link href="\static\bootstrap\css\bootstrap.min.css" rel="stylesheet">
+    <script src="\static\bootstrap\js\bootstrap.bundle.min.js"></script>
+
+    <title>EJU トレーニング - 日本語</title>
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 20px;">
+        <div class="container-fluid" id="_navbar-box"></div>
+    </nav>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "/static/html/navbar.html", success: function (result) {
+                    $("#_navbar-box").html(result);
+                }
+            })
+        });
+    </script>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="alert alert-info" role="alert">
+                    最終人類┏( .-. ┏ ) ┓┏( .-. ┏ ) ┓┏( .-. ┏ ) ┓何処へゆく
+                </div>
+            </div>
+            <div class="col-12">
+                <h2 class="h2">日本語過去問一覧</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">年度</th>
+                            <th scope="col">科目:正解率％</th>
+                            <th scope="col">合計点数</th>
+                            <th scope="col">メモ</th>
+                            <th scope="col">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                平成３０年　第一回
+                            </th>
+                            <td>
+                                <a href="">記</a> |
+                                <a href="">読</a>:81% |
+                                <a href="">聴読</a>:76% |
+                                <a href="">聴</a>:76%
+                            </td>
+                            <td>330点</td>
+                            <td>
+                                <input class="form-control form-control-sm" type="text" placeholder="メモしてください"
+                                    aria-label=".form-control-sm example">
+                            </td>
+                            <td>
+                                <a class="" href="#">全体を練習</a>
+                                <a href="#">歴史得点</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                平成３０年　第一回
+                            </th>
+                            <td>
+                                <a href="">記</a> |
+                                <a href="">読</a>:81% |
+                                <a href="">聴読</a>:76% |
+                                <a href="">聴</a>:76%
+                            </td>
+                            <td>330点</td>
+                            <td>
+                                <input class="form-control form-control-sm" type="text" placeholder="メモしてください"
+                                    aria-label=".form-control-sm example">
+                            </td>
+                            <td>
+                                <a class="" href="#">全体を練習</a>
+                                <a href="#">歴史得点</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
