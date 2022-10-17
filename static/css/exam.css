@@ -1,0 +1,24 @@
+.exam-ctr {
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(rgb(230, 230, 230), rgb(239, 239, 239), rgb(230, 230, 230));
+    border: 1px solid rgb(197, 197, 197);
+    border-radius: 3px;
+    padding: 5px;
+    margin: 10px 0;
+}
+
+.exam-ctr-l {
+    float: left;
+    height: 100%;
+}
+
+.exam-ctr-r {
+    float: right;
+    height: 100%;
+}
+
+.kijyuttu-img {
+    background-size: contain;
+    background-repeat: no-repeat;
+}

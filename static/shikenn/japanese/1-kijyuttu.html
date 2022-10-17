@@ -8,9 +8,11 @@
 
     <!-- Bootstrap 的 CSS 文件 -->
     <link href="..\..\bootstrap\css\bootstrap.min.css" rel="stylesheet">
+    <link href="..\..\css\exam.css" rel="stylesheet">
+    <script src="..\..\js\jquery-3.6.1.min.js"></script>
     <script src="..\..\bootstrap\js\bootstrap.bundle.min.js"></script>
-
     <title>EJU トレーニング</title>
+    <link href="https://cdn.bootcss.com/drawingboard.js/0.4.6/drawingboard.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -22,10 +24,65 @@
                     border: solid 1px #888;
                 }
             </style>
-            <div class="col">
+            <div class="col ">
                 <h2 class="h2">記述</h2>
                 <p>トレーニング　-　平成３０年　第一回</p>
-                <img class="kijyuttu-img" src="https://koushoken.github.io/EJU-Library/library/japanese/H17.1/kijyuttu/1.png" alt="">
+                <div class="exam-ctr">
+                    <div class="exam-ctr-l">
+                        1
+                    </div>
+                    <div class="exam-ctr-r">
+                        <!-- 時計 -->
+                        <div class="__gear-timer" style="font-size: 25px;"></div>
+                        <script>
+                            $(document).ready(function () {
+                                var h = 0;
+                                var m = 0;
+                                var s = 0;
+                                console.log("test")
+                                setInterval(() => {
+                                    function prefixZero(n, m) {
+                                        var _a = (Array(m).join(0) + n).slice(-m);
+                                        return _a;
+                                    }
+                                    /* 变更元素 */
+                                    $(".__gear-timer").html(
+                                        prefixZero(h, 2) + ":" +
+                                        prefixZero(m, 2) + ":" +
+                                        prefixZero(s, 2)
+                                    );
+                                    /* 走秒 */
+                                    s = s + 1;
+                                    if (s >= 60) {
+                                        s = 0;
+                                        m += 1;
+                                        if (m >= 60) {
+                                            m = 0;
+                                            h += 1;
+                                        }
+                                    }
+                                }, 1000);
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="kijyuttu-img" id="kijyuttu-img"
+                    style="background-image: url(https://koushoken.github.io/EJU-Library/library/japanese/H17.1/kijyuttu/1.png); height: 1000px;">
+                </div>
+                <script src="https://cdn.bootcss.com/drawingboard.js/0.4.6/drawingboard.min.js"></script>
+                <script>
+                    var board1 = new DrawingBoard.Board('kijyuttu-img', {
+                        controls: false,
+                        size: 2,
+                        color: "#FF3030",
+                        background: "rgba(0, 0, 0, 0)",
+                        webStorage: false,
+                    });
+                </script>
             </div>
         </div>
     </div>
